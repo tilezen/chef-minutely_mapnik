@@ -8,7 +8,6 @@
 #
 
 %w(
-  minutely_mapnik::sysctl
   minutely_mapnik::structure
   minutely_mapnik::user
   minutely_mapnik::config
