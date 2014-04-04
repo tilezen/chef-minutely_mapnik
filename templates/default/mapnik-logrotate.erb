@@ -1,0 +1,12 @@
+<%= node[:minutely_mapnik][:basedir] %>/logs/*.log %> {
+  daily
+  missingok
+  rotate 2
+  compress
+  dateext
+  copytruncate
+  noolddir
+  sharedscripts
+  postrotate
+  endscript
+}

@@ -1,0 +1,53 @@
+{
+  "sources": {
+    "minutely_mapnik": {
+      "path": "."
+    },
+    "sysctl": {
+      "locked_version": "0.3.5"
+    },
+    "osm2pgsql": {
+      "locked_version": "0.4.4",
+      "git": "git://github.com/mapzen/chef-osm2pgsql.git",
+      "ref": "c12752ce2bf15fbda99ef5038c7e877c2d379739"
+    },
+    "osmosis": {
+      "locked_version": "0.4.0",
+      "git": "git://github.com/mapzen/chef-osmosis.git",
+      "ref": "8f8447c2887b6ec6d757829ab1760a2764ae1e47"
+    },
+    "user": {
+      "locked_version": "0.3.0"
+    },
+    "apt": {
+      "locked_version": "2.3.4"
+    },
+    "git": {
+      "locked_version": "2.9.0"
+    },
+    "dmg": {
+      "locked_version": "2.1.4"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "windows": {
+      "locked_version": "1.30.0"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "runit": {
+      "locked_version": "1.5.10"
+    },
+    "yum": {
+      "locked_version": "3.1.0"
+    },
+    "yum-epel": {
+      "locked_version": "0.3.2"
+    },
+    "java": {
+      "locked_version": "1.20.0"
+    }
+  }
+}
