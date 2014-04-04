@@ -1,4 +1,4 @@
-Minutely_Mapnik Chef Cookbook
+Minutely Mapnik Chef Cookbook
 =============================
 
 Current Build Status
