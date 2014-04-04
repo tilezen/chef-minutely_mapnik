@@ -8,7 +8,6 @@
 #
 
 cron 'minutely mapnik' do
-  action  :create
   minute  node[:minutely_mapnik][:cron][:minute]
   hour    node[:minutely_mapnik][:cron][:hour]
   day     node[:minutely_mapnik][:cron][:day]

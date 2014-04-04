@@ -1,25 +1,31 @@
 require 'spec_helper'
 
-describe 'mapzen_minutely_mapnik::cron' do
-  let(:chef_run) do
-    ChefSpec::Runner.new do |node|
-      node.set[:mapzen][:environment]         = 'test'
-      node.set[:opsworks][:stack][:name]      = 'some::stack'
-      node.set[:opsworks][:instance][:layers] = %w(mapnik)
-      node.set[:opsworks][:instance][:region] = 'us-east-1'
-      node.set[:mapzen][:secrets][:postgresql][:password][:gisuser] = 'blah'
-      node.set[:mapzen][:postgresql][:endpoint]                     = 'localhost'
-    end.converge(described_recipe)
+describe 'minutely_mapnik::cron' do
+  context 'cron is enabled' do
+    let(:chef_run) do
+      ChefSpec::Runner.new do |node|
+        node.set[:minutely_mapnik][:cron][:enable] = true
+      end.converge(described_recipe)
+    end
+
+    it 'should create the cron job: minutely mapnik ' do
+      chef_run.should create_cron('minutely mapnik').with(
+        user:     'mapnik',
+        command:  '/opt/minutely_mapnik/bin/update.sh >/opt/minutely_mapnik/logs/update.out 2>&1'
+      )
+    end
   end
 
-  it 'should create the cron job mapzen_minutely_mapnik' do
-    chef_run.should create_cron('mapzen_minutely_mapnik').with(
-      minute:   '*',
-      hour:     '*',
-      day:      '*',
-      user:     'mapnik',
-      command:  '/opt/minutely_mapnik/bin/update.sh >/opt/minutely_mapnik/logs/update.out 2>&1'
-    )
+  context 'cron is disabled' do
+    let(:chef_run) do
+      ChefSpec::Runner.new do |node|
+        node.set[:minutely_mapnik][:cron][:enable] = false
+      end.converge(described_recipe)
+    end
+
+    it 'should not try to create the cron job: minutely mapnik ' do
+      chef_run.should_not create_cron 'minutely mapnik'
+    end
   end
 
 end

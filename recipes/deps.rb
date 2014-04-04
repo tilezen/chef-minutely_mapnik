@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: mapzen_minutely_mapnik
+# Cookbook Name:: minutely_mapnik
 # Recipe:: deps
 #
-# Copyright 2013, Mapzen
+# Copyright 2014, Mapzen
 #
 # All rights reserved - Do Not Redistribute
 #

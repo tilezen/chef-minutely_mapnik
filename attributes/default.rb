@@ -8,15 +8,15 @@ default[:minutely_mapnik][:user]    = 'mapnik'
 default[:minutely_mapnik][:cfg_txt][:stream]        = 'minute' # one of: minute, hour, day
 default[:minutely_mapnik][:cfg_txt][:max_interval]  = 3600
 
-# state.txt initial state
+# state.txt
 #   You MUST supply initial values
 #   for day/month/year.
 #
-default[:minutely_mapnik][:state_txt][:minute]  = 00
-default[:minutely_mapnik][:state_txt][:hour]    = 00
-default[:minutely_mapnik][:state_txt][:day]     = nil
-default[:minutely_mapnik][:state_txt][:month]   = nil
-default[:minutely_mapnik][:state_txt][:year]    = nil
+default[:minutely_mapnik][:state_txt][:minute]  = 00  # two digits, e.g. 24 for XX:24
+default[:minutely_mapnik][:state_txt][:hour]    = 00  # two digits, e.g. 10 for 10am
+default[:minutely_mapnik][:state_txt][:day]     = nil # two digits, e.g. 01 for monday
+default[:minutely_mapnik][:state_txt][:month]   = nil # two digits, e.g. 10 for october
+default[:minutely_mapnik][:state_txt][:year]    = nil # four digits, e.g. 2014
 
 # cron
 #   Defaults to every minute.

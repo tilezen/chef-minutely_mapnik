@@ -1,24 +1,7 @@
 require 'spec_helper'
 
-describe 'mapzen_minutely_mapnik::config' do
-  let(:chef_run) do
-    ChefSpec::Runner.new do |node|
-      node.set[:mapzen][:environment]         = 'test'
-      node.set[:opsworks][:stack][:name]      = 'some::stack'
-      node.set[:opsworks][:instance][:layers] = %w(mapnik)
-      node.set[:opsworks][:instance][:region] = 'us-east-1'
-      node.set[:mapzen][:secrets][:postgresql][:password][:gisuser] = 'blah'
-      node.set[:mapzen][:postgresql][:endpoint]                     = 'localhost'
-    end.converge(described_recipe)
-  end
-
-  it 'should install package python-pip' do
-    chef_run.should install_package 'python-pip'
-  end
-
-  it 'should execute pip install awscli' do
-    chef_run.should run_execute 'pip install awscli'
-  end
+describe 'minutely_mapnik::config' do
+  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
   it 'should create template /opt/minutely_mapnik/bin/update.sh' do
     chef_run.should create_template('/opt/minutely_mapnik/bin/update.sh').with(
@@ -30,10 +13,10 @@ describe 'mapzen_minutely_mapnik::config' do
   end
 
   it 'should create template /opt/minutely_mapnik/osmosis/configuration.txt' do
-    chef_run.should create_cookbook_file('/opt/minutely_mapnik/osmosis/configuration.txt').with(
+    chef_run.should create_template('/opt/minutely_mapnik/osmosis/configuration.txt').with(
       owner:  'mapnik',
       group:  'mapnik',
-      source: 'configuration.txt',
+      source: 'configuration.txt.erb',
       mode:   0644
     )
   end
@@ -43,6 +26,14 @@ describe 'mapzen_minutely_mapnik::config' do
       owner:  'root',
       group:  'root',
       source: 'mapnik-logrotate.erb',
+      mode:   0644
+    )
+  end
+
+  it 'should create remote_file state.txt' do
+    chef_run.should create_remote_file('/opt/minutely_mapnik/osmosis/state.txt').with(
+      owner:  'mapnik',
+      group:  'mapnik',
       mode:   0644
     )
   end

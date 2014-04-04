@@ -21,6 +21,15 @@ template "#{node[:minutely_mapnik][:basedir]}/osmosis/configuration.txt" do
   mode    0644
 end
 
+# rotate logs
+#
+template '/etc/logrotate.d/mapnik' do
+  owner   'root'
+  group   'root'
+  source  'mapnik-logrotate.erb'
+  mode    0644
+end
+
 # fetch state.txt
 #
 remote_file "#{node[:minutely_mapnik][:basedir]}/osmosis/state.txt" do
@@ -36,13 +45,4 @@ stream=#{node[:minutely_mapnik][:state_txt][:stream]}#"
   group   node[:minutely_mapnik][:user]
   mode    0644
   not_if  { ::File.exist?("#{node[:minutely_mapnik][:basedir]}/osmosis/state.txt") }
-end
-
-# rotate logs
-#
-template '/etc/logrotate.d/mapnik' do
-  owner   'root'
-  group   'root'
-  source  'mapnik-logrotate.erb'
-  mode    0644
 end
