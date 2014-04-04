@@ -2,10 +2,6 @@
 # Cookbook Name:: minutely_mapnik
 # Recipe:: config
 #
-# Copyright 2014, Mapzen
-#
-# All rights reserved - Do Not Redistribute
-#
 
 template "#{node[:minutely_mapnik][:basedir]}/bin/update.sh" do
   owner   node[:minutely_mapnik][:user]

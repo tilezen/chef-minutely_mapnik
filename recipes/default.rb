@@ -2,10 +2,6 @@
 # Cookbook Name:: minutely_mapnik
 # Recipe:: default
 #
-# Copyright 2014, Mapzen
-#
-# All rights reserved - Do Not Redistribute
-#
 
 %w(
   minutely_mapnik::structure

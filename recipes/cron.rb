@@ -2,10 +2,6 @@
 # Cookbook Name:: minutely_mapnik
 # Recipe:: cron
 #
-# Copyright 2014, Mapzen
-#
-# All rights reserved - Do Not Redistribute
-#
 
 cron 'minutely mapnik' do
   minute  node[:minutely_mapnik][:cron][:minute]

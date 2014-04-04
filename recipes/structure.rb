@@ -2,10 +2,6 @@
 # Cookbook Name:: minutely_mapnik
 # Recipe:: structure
 #
-# Copyright 2014, Mapzen
-#
-# All rights reserved - Do Not Redistribute
-#
 
 directory node[:minutely_mapnik][:basedir] do
   owner   node[:minutely_mapnik][:user]
