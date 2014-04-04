@@ -13,5 +13,5 @@ cron 'minutely mapnik' do
   day     node[:minutely_mapnik][:cron][:day]
   user    node[:minutely_mapnik][:user]
   command "#{node[:minutely_mapnik][:basedir]}/bin/update.sh >#{node[:minutely_mapnik][:basedir]}/logs/update.out 2>&1"
-  only_if { node[:minutely_mapnik][:cron][:enable] == true }
+  only_if { node[:minutely_mapnik][:cron][:enable] }
 end
