@@ -1,11 +1,6 @@
 Minutely Mapnik Chef Cookbook
 =============================
-
-Chef cookbook to assist with minutely mapnik
-
-Current Build Status
---------------------
-[![Build Status](https://secure.travis-ci.org/mapzen/chef-minutely_mapnik.png)](http://travis-ci.org/mapzen/chef-minutely_mapnik)
+![Build Status](https://circleci.com/gh/mapzen/chef-minutely_mapnik.png?circle-token=42b8296678aaf60a4ae105538af70288a77683f5)
 
 Description
 -----------
