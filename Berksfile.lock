@@ -1,53 +1,48 @@
-{
-  "sources": {
-    "minutely_mapnik": {
-      "path": "."
-    },
-    "osm2pgsql": {
-      "locked_version": "0.4.4",
-      "git": "git://github.com/mapzen/chef-osm2pgsql.git",
-      "ref": "c12752ce2bf15fbda99ef5038c7e877c2d379739"
-    },
-    "osmosis": {
-      "locked_version": "0.4.0",
-      "git": "git://github.com/mapzen/chef-osmosis.git",
-      "ref": "8f8447c2887b6ec6d757829ab1760a2764ae1e47"
-    },
-    "sysctl": {
-      "locked_version": "0.3.5"
-    },
-    "user": {
-      "locked_version": "0.3.0"
-    },
-    "apt": {
-      "locked_version": "2.3.4"
-    },
-    "git": {
-      "locked_version": "2.9.0"
-    },
-    "dmg": {
-      "locked_version": "2.1.4"
-    },
-    "build-essential": {
-      "locked_version": "1.4.2"
-    },
-    "windows": {
-      "locked_version": "1.12.8"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.4"
-    },
-    "runit": {
-      "locked_version": "1.5.10"
-    },
-    "yum": {
-      "locked_version": "3.0.6"
-    },
-    "yum-epel": {
-      "locked_version": "0.2.0"
-    },
-    "java": {
-      "locked_version": "1.21.2"
-    }
-  }
-}
+DEPENDENCIES
+  minutely_mapnik
+    path: .
+    metadata: true
+  osm2pgsql
+    git: git://github.com/mapzen/chef-osm2pgsql.git
+    revision: 67de4f4be389734f3c20d6fbafc362ce8c77c075
+    branch: master
+  osmosis
+    git: git://github.com/mapzen/chef-osmosis.git
+    revision: 2e14891177e9d60f999cda7d4ecc1f1747d6f86c
+    branch: master
+
+GRAPH
+  apt (2.3.10)
+  build-essential (2.0.0)
+  chef_handler (1.1.6)
+  dmg (2.2.0)
+  git (4.0.2)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    runit (>= 1.0.0)
+    windows (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  java (1.22.0)
+  minutely_mapnik (0.0.1)
+    osm2pgsql (>= 0.0.0)
+    osmosis (>= 0.0.0)
+    sysctl (>= 0.0.0)
+    user (>= 0.0.0)
+  osm2pgsql (0.4.4)
+    apt (>= 0.0.0)
+    git (>= 0.0.0)
+  osmosis (0.4.3)
+    apt (>= 0.0.0)
+    java (>= 0.0.0)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  sysctl (0.4.0)
+  user (0.3.0)
+  windows (1.30.2)
+    chef_handler (>= 0.0.0)
+  yum (3.2.0)
+  yum-epel (0.3.6)
+    yum (~> 3.0)

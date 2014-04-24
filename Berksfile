@@ -1,3 +1,4 @@
+source 'https://api.berkshelf.com'
 metadata
 
 cookbook 'osm2pgsql' , github: 'mapzen/chef-osm2pgsql' , branch: 'master'
