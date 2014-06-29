@@ -24,7 +24,7 @@ GRAPH
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
   java (1.22.0)
-  minutely_mapnik (0.0.1)
+  minutely_mapnik (0.0.2)
     osm2pgsql (>= 0.0.0)
     osmosis (>= 0.0.0)
     sysctl (>= 0.0.0)
