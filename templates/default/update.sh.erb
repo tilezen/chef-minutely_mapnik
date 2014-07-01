@@ -7,11 +7,11 @@ PIDEXPIREFILE=/tmp/expiry.pid
 BASEDIR=<%= node[:minutely_mapnik][:basedir] %>
 LOGDIR=$BASEDIR/logs
 
-OSMOSIS=/usr/bin/osmosis
+OSMOSIS=osmosis
 OSMOSIS_WORKDIR=$BASEDIR/osmosis
 
 FLATNODES=$OSMOSIS_WORKDIR/flat.nodes
-OSM2PGSQL=/usr/bin/osm2pgsql
+OSM2PGSQL=osm2pgsql
 PGOPTS="--host <%= node[:minutely_mapnik][:postgres][:endpoint] %> --database <%= node[:minutely_mapnik][:postgres][:database] %> --username <%= node[:minutely_mapnik][:postgres][:user] %>"
 export PGPASSWORD=<%= node[:minutely_mapnik][:postgres][:password] %>
 
