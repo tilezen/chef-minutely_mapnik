@@ -13,7 +13,7 @@ describe 'minutely_mapnik::default' do
 
   recipes.each do |recipe|
     it "should include recipe #{recipe}" do
-      chef_run.should include_recipe recipe
+      expect(chef_run).to include_recipe recipe
     end
   end
 

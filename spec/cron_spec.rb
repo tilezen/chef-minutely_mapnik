@@ -9,7 +9,7 @@ describe 'minutely_mapnik::cron' do
     end
 
     it 'should create the cron job: minutely mapnik ' do
-      chef_run.should create_cron('minutely mapnik').with(
+      expect(chef_run).to create_cron('minutely mapnik').with(
         user:     'mapnik',
         command:  '/opt/minutely_mapnik/bin/update.sh >/opt/minutely_mapnik/logs/update.out 2>&1'
       )
@@ -24,7 +24,7 @@ describe 'minutely_mapnik::cron' do
     end
 
     it 'should not try to create the cron job: minutely mapnik ' do
-      chef_run.should_not create_cron 'minutely mapnik'
+      expect(chef_run).to_not create_cron 'minutely mapnik'
     end
   end
 
