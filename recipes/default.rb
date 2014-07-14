@@ -4,6 +4,7 @@
 #
 
 %w(
+  apt::default
   minutely_mapnik::structure
   minutely_mapnik::user
   minutely_mapnik::config

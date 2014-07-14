@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.0.3
+-----
+* include apt::default
+* berks update
+* ignore files
+
 0.0.2
 -----
 * osmosis path

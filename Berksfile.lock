@@ -1,48 +1,42 @@
 DEPENDENCIES
+  apt
   minutely_mapnik
     path: .
     metadata: true
   osm2pgsql
     git: git://github.com/mapzen/chef-osm2pgsql.git
-    revision: 67de4f4be389734f3c20d6fbafc362ce8c77c075
+    revision: d4362eb51e8f3b36751cbe08a6472f814b658965
     branch: master
   osmosis
     git: git://github.com/mapzen/chef-osmosis.git
-    revision: 2e14891177e9d60f999cda7d4ecc1f1747d6f86c
+    revision: 98f6ca5be305d67e49e062ecaf0532cbd7bae243
     branch: master
 
 GRAPH
-  apt (2.3.10)
-  build-essential (2.0.0)
-  chef_handler (1.1.6)
-  dmg (2.2.0)
-  git (4.0.2)
-    build-essential (>= 0.0.0)
-    dmg (>= 0.0.0)
-    runit (>= 1.0.0)
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  apt (2.4.0)
+  ark (0.9.0)
+    7-zip (>= 0.0.0)
     windows (>= 0.0.0)
-    yum (~> 3.0)
-    yum-epel (>= 0.0.0)
+  chef_handler (1.1.6)
   java (1.22.0)
   minutely_mapnik (0.0.2)
+    apt (>= 0.0.0)
     osm2pgsql (>= 0.0.0)
     osmosis (>= 0.0.0)
     sysctl (>= 0.0.0)
     user (>= 0.0.0)
-  osm2pgsql (0.4.4)
+  ohai (2.0.1)
+  osm2pgsql (0.5.2)
     apt (>= 0.0.0)
-    git (>= 0.0.0)
-  osmosis (0.4.3)
+    ark (>= 0.0.0)
+  osmosis (0.6.0)
     apt (>= 0.0.0)
+    ark (>= 0.0.0)
     java (>= 0.0.0)
-  runit (1.5.10)
-    build-essential (>= 0.0.0)
-    yum (~> 3.0)
-    yum-epel (>= 0.0.0)
-  sysctl (0.4.0)
+  sysctl (0.6.0)
+    ohai (>= 0.0.0)
   user (0.3.0)
-  windows (1.30.2)
+  windows (1.32.0)
     chef_handler (>= 0.0.0)
-  yum (3.2.0)
-  yum-epel (0.3.6)
-    yum (~> 3.0)
