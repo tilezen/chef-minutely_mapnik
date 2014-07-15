@@ -5,8 +5,8 @@
 
 %w(
   apt::default
-  minutely_mapnik::structure
   minutely_mapnik::user
+  minutely_mapnik::structure
   minutely_mapnik::config
   minutely_mapnik::deps
   minutely_mapnik::cron

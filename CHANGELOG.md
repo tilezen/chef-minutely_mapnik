@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.0.4
+-----
+* need to create user first
+
 0.0.3
 -----
 * include apt::default
