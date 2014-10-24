@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.0.5
+-----
+* fix logrotate trailing characters
+
 0.0.4
 -----
 * need to create user first
