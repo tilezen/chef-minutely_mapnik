@@ -112,6 +112,10 @@ fi
 
 m_ok "import done"
 
+<% if node[:minutely_mapnik][:osm2pgsql][:post_import] %>
+<%= node[:minutely_mapnik][:osm2pgsql][:post_import] %>
+<% end %>
+
 freelock "$PIDFILE"
 
 /bin/rm -f "$CURRENT"
