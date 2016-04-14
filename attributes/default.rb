@@ -38,3 +38,5 @@ default[:minutely_mapnik][:postgres][:password] = ''
 # osm2pgsql
 #
 default[:minutely_mapnik][:osm2pgsql][:num_processes] = node[:cpu][:total]
+# if present, will execute post import, but before freeing lock
+default[:minutely_mapnik][:osm2pgsql][:post_import] = nil
