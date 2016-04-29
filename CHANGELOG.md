@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.0.6
+-----
+* Add support for specifying a post import script
+
 0.0.5
 -----
 * fix logrotate trailing characters
