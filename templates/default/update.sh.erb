@@ -106,7 +106,7 @@ m_info "expecting Node("$((NODES / 1000))"k) Way("$((WAYS / 1000))"k) Relation("
 
 m_ok "importing diff"
 
-if ! $OSM2PGSQL $PGOPTS --append --slim --hstore --cache 2048 --merc --prefix planet_osm --flat-nodes $FLATNODES --style default.style --verbose --number-processes <%= node[:minutely_mapnik][:osm2pgsql][:num_processes] %> "$CURRENT" 1>&2 2>> "$PSQLLOG"; then
+if ! $OSM2PGSQL $PGOPTS --append --slim --hstore-all --cache 2048 --merc --prefix planet_osm --flat-nodes $FLATNODES --style default.style --verbose --number-processes <%= node[:minutely_mapnik][:osm2pgsql][:num_processes] %> "$CURRENT" 1>&2 2>> "$PSQLLOG"; then
 	m_error "osm2pgsql error"
 fi
 
